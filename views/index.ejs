@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%- title %></h1>
+    <main class="main">
+        <a href="/new">Create new Message</a>
+    <% if (messages) { %>
+     <ul>
+        <% messages.forEach(message => { %>
+         <li>
+            <p><span>User: </span> <%= message.user %></p>
+            <p><span>Message: </span> <%= message.text %></p>
+            <p><span>Sent On: </span> <%= message.added.toLocaleString() %></p>
+         </li>
+        <% }) %>
+     </ul>
+    <% } %>
+    </main>
+    
+    
+    
+</body>
+</html>
